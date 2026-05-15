@@ -59,13 +59,30 @@ function Sidebar() {
             )}
           </NavLink>
         ))}
-        <a 
-          href="#support" 
-          className="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container transition-all duration-200 rounded-lg font-label-md text-label-md"
+        <NavLink 
+          to="/support" 
+          className={({ isActive }) =>
+            clsx(
+              "flex items-center gap-3 px-4 py-3 rounded-lg font-label-md text-label-md transition-all duration-200",
+              isActive
+                ? "bg-primary-container text-on-primary-container font-bold"
+                : "text-on-surface-variant hover:bg-surface-container"
+            )
+          }
         >
-          <span className="material-symbols-outlined" aria-hidden="true">contact_support</span>
-          <span>Support</span>
-        </a>
+          {({ isActive }) => (
+            <>
+              <span 
+                className="material-symbols-outlined" 
+                style={{ fontVariationSettings: isActive ? "'FILL' 1" : "'FILL' 0" }}
+                aria-hidden="true"
+              >
+                contact_support
+              </span>
+              <span>Support</span>
+            </>
+          )}
+        </NavLink>
       </nav>
 
       <div className="mt-auto px-4 py-4 space-y-1 border-t border-outline-variant">

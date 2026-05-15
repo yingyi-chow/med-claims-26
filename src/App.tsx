@@ -5,6 +5,7 @@ import MyPolicies from './pages/MyPolicies';
 import ClaimSimulator from './pages/ClaimSimulator';
 import DocumentCenter from './pages/DocumentCenter';
 import Pricing from './pages/Pricing';
+import Support from './pages/Support';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="pricing" element={<Pricing />} />
         <Route path="simulator" element={<ClaimSimulator />} />
         <Route path="documents" element={<DocumentCenter />} />
+        <Route path="support" element={<Support />} />
       </Route>
     </Routes>
   );

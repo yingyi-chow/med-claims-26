@@ -125,7 +125,7 @@ function Pricing() {
             Sign up today to unlock clear insights into your policies, spot hidden exclusions, and understand your claimable coverage in minutes.
           </p>
           <button className="bg-tertiary-fixed text-on-tertiary-fixed px-8 py-4 rounded-xl font-label-md text-label-md shadow-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-tertiary-fixed focus:ring-offset-2 focus:ring-offset-primary">
-            Create Your Free Account
+            Upgrade your plan
           </button>
         </div>
       </section>

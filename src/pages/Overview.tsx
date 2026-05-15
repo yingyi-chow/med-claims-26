@@ -22,15 +22,41 @@ function Overview() {
       </header>
 
       {/* Promotional Banner */}
-      <div className="bg-primary-container text-on-primary-container rounded-xl p-8 mb-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-        <div className="flex-1">
-          <h3 className="font-headline-md text-headline-md mb-2">Be sure of your coverage.</h3>
-          <p className="font-body-md text-body-md opacity-90 max-w-3xl">
+      <div className="relative rounded-2xl mb-12 overflow-hidden bg-primary shadow-lg flex flex-col md:flex-row items-stretch">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-primary-fixed/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 z-0 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-tertiary-fixed-dim/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 z-0 pointer-events-none"></div>
+        <div className="absolute top-0 left-0 w-full md:w-3/4 h-full bg-gradient-to-r from-primary via-primary/95 to-transparent z-10 pointer-events-none hidden md:block"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-primary via-primary/80 to-transparent z-10 pointer-events-none md:hidden"></div>
+        
+        {/* Text Content */}
+        <div className="relative z-20 flex-1 p-8 md:p-12 text-on-primary flex flex-col justify-center">
+          <div className="inline-flex items-center gap-2 bg-white/10 px-4 py-1.5 rounded-full mb-6 border border-white/20 backdrop-blur-md self-start">
+            <span className="material-symbols-outlined text-[16px] text-tertiary-fixed-dim" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">verified_user</span>
+            <span className="text-label-sm font-bold tracking-wider uppercase text-white">Coverage Intelligence</span>
+          </div>
+          <h3 className="font-headline-xl text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-white">
+            Be sure of your coverage.
+          </h3>
+          <p className="font-body-lg text-lg opacity-90 max-w-xl mb-8 leading-relaxed text-primary-fixed">
             Uncover hidden disclaimers and fine print, and know exactly which parts of your policy you can claim — and how much.
           </p>
+          <button 
+            onClick={() => navigate('/policies')}
+            className="self-start bg-white text-primary px-6 py-3.5 rounded-xl font-label-md font-bold hover:bg-surface-container-lowest transition-all shadow-md hover:shadow-lg flex items-center gap-2 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
+          >
+            <span className="material-symbols-outlined text-[20px]" aria-hidden="true">manage_search</span>
+            Analyze My Policies
+          </button>
         </div>
-        <div className="w-16 h-16 rounded-full bg-on-primary-container/10 flex items-center justify-center shrink-0">
-          <span className="material-symbols-outlined text-[32px]" aria-hidden="true">plagiarism</span>
+
+        {/* Image / Graphic */}
+        <div className="absolute md:relative inset-0 md:inset-auto z-0 md:z-10 w-full md:w-1/2 lg:w-5/12 h-full md:min-h-[360px] shrink-0">
+          <img 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr2JD-9-84k7gegAnPV2XD5PdTHZ2F9BQSZpF6yYKwmrHntNJuLMUs1pURE2yNZb6k2IF8PGxiYxFmXb1a1gtFgY1kqm-gjKD789OCoWF3n-7ww01i7W5m_7OGbpj0NQTsufwRCLAY2sJrrj4N6PSIa2xqmURCTD_c7w9X42H6-8qcNOmm35rqTCjjnQUsd1etf8Gji3ExHcu7JXmHhjH5IkuP3AtRQB7o_l1cfzxfUqhE_YzTZB3b1JrzASJh8d-vZbwC3xVyY8s" 
+            alt="Medical professional reviewing policy on a tablet" 
+            className="w-full h-full object-cover object-center md:rounded-r-2xl opacity-40 md:opacity-100"
+          />
         </div>
       </div>
 
