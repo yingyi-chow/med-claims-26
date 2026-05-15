@@ -32,7 +32,7 @@ function MyPolicies() {
               </div>
               <div>
                 <h3 className="font-headline-md text-[20px] text-on-surface">Health Elite Plus</h3>
-                <p className="text-label-md text-outline">MedCover Global Assurance</p>
+                <p className="text-label-md text-outline">MedClaim Global Assurance</p>
               </div>
             </div>
             <span className="px-3 py-1 bg-tertiary-container/10 text-on-tertiary-fixed-variant rounded-full text-label-sm font-bold flex items-center gap-1">

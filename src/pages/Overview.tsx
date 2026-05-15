@@ -159,7 +159,7 @@ function Overview() {
           <div className="bg-primary-container p-8 rounded-xl text-on-primary-container relative overflow-hidden shadow-sm">
             <h3 className="font-label-md text-label-md mb-2 opacity-80">Year-to-date Savings</h3>
             <p className="font-headline-lg text-headline-lg text-on-primary-container">$12,450.00</p>
-            <p className="font-label-sm text-label-sm mt-4 text-primary-fixed">Your MedCover Pro plan has saved you 22% more than last year.</p>
+            <p className="font-label-sm text-label-sm mt-4 text-primary-fixed">Your MedClaim Pro plan has saved you 22% more than last year.</p>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-fixed/10 rounded-full" aria-hidden="true"></div>
           </div>
 

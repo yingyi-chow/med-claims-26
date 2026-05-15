@@ -17,7 +17,7 @@ function Sidebar() {
             <span className="material-symbols-outlined text-white" style={{ fontVariationSettings: "'FILL' 1" }}>medical_services</span>
           </div>
           <div>
-            <h1 className="text-headline-md font-headline-md font-bold text-primary">MedCover</h1>
+            <h1 className="text-headline-md font-headline-md font-bold text-primary">MedClaim</h1>
             <p className="text-label-sm text-on-surface-variant font-label-sm">Expertise & Clarity</p>
           </div>
         </div>
