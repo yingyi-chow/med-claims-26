@@ -27,8 +27,8 @@ function MyPolicies() {
         <h3 className="font-headline-md text-headline-md text-on-surface mb-4">Coverage at a Glance</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="bg-surface p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col gap-2">
-            <div className="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-primary">
-              <span className="material-symbols-outlined text-[20px]" aria-hidden="true">healing</span>
+            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm">
+              <span className="material-symbols-outlined text-[24px]" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">healing</span>
             </div>
             <p className="font-label-md text-on-surface">Surgery & Hospitalization</p>
             <div className="mt-auto pt-2">
@@ -37,8 +37,8 @@ function MyPolicies() {
             </div>
           </div>
           <div className="bg-surface p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col gap-2">
-            <div className="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-primary">
-              <span className="material-symbols-outlined text-[20px]" aria-hidden="true">medication</span>
+            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm">
+              <span className="material-symbols-outlined text-[24px]" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">medication</span>
             </div>
             <p className="font-label-md text-on-surface">Outpatient & Pharmacy</p>
             <div className="mt-auto pt-2">
@@ -47,8 +47,8 @@ function MyPolicies() {
             </div>
           </div>
           <div className="bg-surface p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col gap-2">
-            <div className="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-primary">
-              <span className="material-symbols-outlined text-[20px]" aria-hidden="true">dentistry</span>
+            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm">
+              <span className="material-symbols-outlined text-[24px]" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">dentistry</span>
             </div>
             <p className="font-label-md text-on-surface">Dental Care</p>
             <div className="mt-auto pt-2">
@@ -57,8 +57,8 @@ function MyPolicies() {
             </div>
           </div>
           <div className="bg-surface p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col gap-2">
-            <div className="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-primary">
-              <span className="material-symbols-outlined text-[20px]" aria-hidden="true">family_history</span>
+            <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary shadow-sm">
+              <span className="material-symbols-outlined text-[24px]" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">family_history</span>
             </div>
             <p className="font-label-md text-on-surface">Life & Critical Illness</p>
             <div className="mt-auto pt-2">
@@ -75,7 +75,7 @@ function MyPolicies() {
           <div className="flex justify-between items-start">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
-                <span className="material-symbols-outlined text-[32px]" aria-hidden="true">medical_services</span>
+                <span className="material-symbols-outlined text-[32px]" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">medical_services</span>
               </div>
               <div>
                 <h3 className="font-headline-md text-[20px] text-on-surface">Health Elite Plus</h3>
@@ -154,7 +154,7 @@ function MyPolicies() {
           <div className="flex justify-between items-start">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
-                <span className="material-symbols-outlined text-[32px]" aria-hidden="true">dentistry</span>
+                <span className="material-symbols-outlined text-[32px]" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">dentistry</span>
               </div>
               <div>
                 <h3 className="font-headline-md text-[20px] text-on-surface">Dental Care Pro</h3>
