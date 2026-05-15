@@ -28,12 +28,20 @@ function ClaimSimulator() {
   const [cost, setCost] = useState('');
   const [facility, setFacility] = useState('network');
   const [simulationResult, setSimulationResult] = useState<PolicyResult | null>(null);
+  const [errors, setErrors] = useState<{condition?: string; treatment?: string; cost?: string}>({});
 
   const handleSimulate = () => {
-    if (!condition || !treatment || !cost) {
-      alert("Please fill in all fields.");
+    const newErrors: {condition?: string; treatment?: string; cost?: string} = {};
+    if (!condition) newErrors.condition = "Illness or Condition is required.";
+    if (!treatment) newErrors.treatment = "Primary Treatment is required.";
+    if (!cost) newErrors.cost = "Estimated Total Cost is required.";
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
+    
+    setErrors({});
 
     const totalCost = parseFloat(cost);
     let result: PolicyResult;
@@ -109,30 +117,41 @@ function ClaimSimulator() {
             
             <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); handleSimulate(); }}>
               <div className="space-y-2">
-                <label className="font-label-md text-label-md text-on-surface" htmlFor="condition">Illness or Condition</label>
+                <label className="font-label-md text-label-md text-on-surface" htmlFor="condition">Illness or Condition <span className="text-error">*</span></label>
                 <div className="relative">
                   <input 
                     id="condition" 
                     type="text" 
                     value={condition}
-                    onChange={(e) => setCondition(e.target.value)}
-                    className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md bg-transparent" 
+                    onChange={(e) => {
+                      setCondition(e.target.value);
+                      if (errors.condition) setErrors({...errors, condition: undefined});
+                    }}
+                    className={`w-full h-12 px-4 rounded-lg border outline-none transition-all font-body-md text-body-md bg-transparent ${errors.condition ? 'border-error focus:ring-1 focus:ring-error' : 'border-outline focus:border-primary focus:ring-1 focus:ring-primary'}`} 
                     placeholder="e.g., Knee Injury"
                     aria-required="true"
+                    aria-invalid={!!errors.condition}
+                    aria-describedby={errors.condition ? "condition-error" : undefined}
                   />
-                  <span className="absolute right-4 top-3 material-symbols-outlined text-outline" aria-hidden="true">search</span>
+                  <span className={`absolute right-4 top-3 material-symbols-outlined ${errors.condition ? 'text-error' : 'text-outline'}`} aria-hidden="true">search</span>
                 </div>
+                {errors.condition && <p id="condition-error" className="text-label-sm text-error flex items-center gap-1 mt-1"><span className="material-symbols-outlined text-[14px]">error</span>{errors.condition}</p>}
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <label className="font-label-md text-label-md text-on-surface" htmlFor="treatment">Primary Treatment</label>
+                  <label className="font-label-md text-label-md text-on-surface" htmlFor="treatment">Primary Treatment <span className="text-error">*</span></label>
                   <select 
                     id="treatment" 
                     value={treatment}
-                    onChange={(e) => setTreatment(e.target.value)}
-                    className="w-full h-12 px-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md bg-transparent"
+                    onChange={(e) => {
+                      setTreatment(e.target.value);
+                      if (errors.treatment) setErrors({...errors, treatment: undefined});
+                    }}
+                    className={`w-full h-12 px-4 rounded-lg border outline-none transition-all font-body-md text-body-md bg-transparent ${errors.treatment ? 'border-error focus:ring-1 focus:ring-error' : 'border-outline focus:border-primary focus:ring-1 focus:ring-primary'}`}
                     aria-required="true"
+                    aria-invalid={!!errors.treatment}
+                    aria-describedby={errors.treatment ? "treatment-error" : undefined}
                   >
                     <option value="">Select Treatment</option>
                     <option value="surgery">Surgery (In-patient)</option>
@@ -141,6 +160,7 @@ function ClaimSimulator() {
                     <option value="diagnostic">Diagnostic Imaging (MRI/CT)</option>
                     <option value="dental">Dental Procedure</option>
                   </select>
+                  {errors.treatment && <p id="treatment-error" className="text-label-sm text-error flex items-center gap-1 mt-1"><span className="material-symbols-outlined text-[14px]">error</span>{errors.treatment}</p>}
                 </div>
                 <div className="space-y-2">
                   <label className="font-label-md text-label-md text-on-surface" htmlFor="date">Estimated Date</label>
@@ -153,19 +173,25 @@ function ClaimSimulator() {
               </div>
 
               <div className="space-y-2">
-                <label className="font-label-md text-label-md text-on-surface" htmlFor="cost">Estimated Total Cost</label>
+                <label className="font-label-md text-label-md text-on-surface" htmlFor="cost">Estimated Total Cost <span className="text-error">*</span></label>
                 <div className="relative">
-                  <span className="absolute left-4 top-3 font-body-md text-body-md text-outline" aria-hidden="true">$</span>
+                  <span className={`absolute left-4 top-3 font-body-md text-body-md ${errors.cost ? 'text-error' : 'text-outline'}`} aria-hidden="true">$</span>
                   <input 
                     id="cost" 
                     type="number" 
                     value={cost}
-                    onChange={(e) => setCost(e.target.value)}
-                    className="w-full h-12 pl-8 pr-4 rounded-lg border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md bg-transparent" 
+                    onChange={(e) => {
+                      setCost(e.target.value);
+                      if (errors.cost) setErrors({...errors, cost: undefined});
+                    }}
+                    className={`w-full h-12 pl-8 pr-4 rounded-lg border outline-none transition-all font-body-md text-body-md bg-transparent ${errors.cost ? 'border-error focus:ring-1 focus:ring-error' : 'border-outline focus:border-primary focus:ring-1 focus:ring-primary'}`} 
                     placeholder="0.00"
                     aria-required="true"
+                    aria-invalid={!!errors.cost}
+                    aria-describedby={errors.cost ? "cost-error" : undefined}
                   />
                 </div>
+                {errors.cost && <p id="cost-error" className="text-label-sm text-error flex items-center gap-1 mt-1"><span className="material-symbols-outlined text-[14px]">error</span>{errors.cost}</p>}
               </div>
 
               <div className="space-y-2">
