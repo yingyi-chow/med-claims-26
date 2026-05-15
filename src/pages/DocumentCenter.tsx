@@ -53,7 +53,7 @@ function DocumentCenter() {
                 <th className="px-6 py-4 font-label-md text-label-md text-secondary" scope="col">Document Name</th>
                 <th className="px-6 py-4 font-label-md text-label-md text-secondary" scope="col">Policy Number</th>
                 <th className="px-6 py-4 font-label-md text-label-md text-secondary" scope="col">Date Uploaded</th>
-                <th className="px-6 py-4 font-label-md text-label-md text-secondary" scope="col">Status</th>
+                <th className="px-6 py-4 font-label-md text-label-md text-secondary" scope="col">Utilization</th>
                 <th className="px-6 py-4 font-label-md text-label-md text-secondary text-right" scope="col">Actions</th>
               </tr>
             </thead>
@@ -68,10 +68,8 @@ function DocumentCenter() {
                 <td className="px-6 py-5 text-body-md font-body-md text-secondary">POL-8829-XJ</td>
                 <td className="px-6 py-5 text-body-md font-body-md text-secondary">Oct 24, 2023</td>
                 <td className="px-6 py-5">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-tertiary/10 text-tertiary-container font-label-sm text-label-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-tertiary mr-2" aria-hidden="true"></span>
-                    Verified
-                  </span>
+                  <span className="font-label-md text-on-surface">3 claims this year</span>
+                  <p className="text-label-sm text-secondary">$1,200 claimed</p>
                 </td>
                 <td className="px-6 py-5 text-right">
                   <div className="flex justify-end gap-2 opacity-60 group-hover:opacity-100 transition-opacity">
@@ -95,10 +93,8 @@ function DocumentCenter() {
                 <td className="px-6 py-5 text-body-md font-body-md text-secondary">DEN-1102-AQ</td>
                 <td className="px-6 py-5 text-body-md font-body-md text-secondary">Oct 26, 2023</td>
                 <td className="px-6 py-5">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-primary-container/10 text-primary font-label-sm text-label-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse mr-2" aria-hidden="true"></span>
-                    Processing
-                  </span>
+                  <span className="font-label-md text-on-surface">1 claim this year</span>
+                  <p className="text-label-sm text-secondary">$150 claimed</p>
                 </td>
                 <td className="px-6 py-5 text-right">
                   <div className="flex justify-end gap-2 opacity-60 group-hover:opacity-100 transition-opacity">
