@@ -29,6 +29,7 @@ function ClaimSimulator() {
   const [facility, setFacility] = useState('network');
   const [simulationResult, setSimulationResult] = useState<PolicyResult | null>(null);
   const [errors, setErrors] = useState<{condition?: string; treatment?: string; cost?: string}>({});
+  const [isClaimed, setIsClaimed] = useState(false);
 
   const handleSimulate = () => {
     const newErrors: {condition?: string; treatment?: string; cost?: string} = {};
@@ -42,6 +43,7 @@ function ClaimSimulator() {
     }
     
     setErrors({});
+    setIsClaimed(false);
 
     const totalCost = parseFloat(cost);
     let result: PolicyResult;
@@ -260,18 +262,37 @@ function ClaimSimulator() {
         </div>
       ) : (
         <div className="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 card-shadow">
-          <div className="flex justify-between items-center mb-6 border-b border-outline-variant pb-4">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 border-b border-outline-variant pb-4 gap-4">
             <div>
               <p className="text-label-sm font-label-sm text-primary uppercase tracking-wider mb-1">Simulation Result</p>
               <h3 className="font-headline-lg text-headline-lg text-on-background">{simulationResult.scenarioName}</h3>
               <p className="text-body-md text-on-surface-variant mt-1">Total Estimated Cost: ${simulationResult.cost.toLocaleString()}</p>
             </div>
-            <button 
-              onClick={() => setSimulationResult(null)}
-              className="px-4 py-2 border border-outline rounded-lg font-label-md text-primary hover:bg-surface-container-low transition-colors"
-            >
-              Start New Simulation
-            </button>
+            <div className="flex gap-3 w-full md:w-auto">
+              <button 
+                onClick={() => setIsClaimed(true)}
+                disabled={isClaimed}
+                className={`px-4 py-2 rounded-lg font-label-md transition-colors flex items-center justify-center gap-2 flex-1 md:flex-none ${isClaimed ? 'bg-tertiary text-on-tertiary cursor-default' : 'bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'}`}
+              >
+                {isClaimed ? (
+                  <>
+                    <span className="material-symbols-outlined text-[18px]">check_circle</span>
+                    Claimed
+                  </>
+                ) : (
+                  <>
+                    <span className="material-symbols-outlined text-[18px]">task_alt</span>
+                    Mark as Claimed
+                  </>
+                )}
+              </button>
+              <button 
+                onClick={() => setSimulationResult(null)}
+                className="px-4 py-2 border border-outline rounded-lg font-label-md text-primary hover:bg-surface-container-low transition-colors flex-1 md:flex-none text-center"
+              >
+                Start New Simulation
+              </button>
+            </div>
           </div>
 
           <h4 className="font-headline-md mb-4 text-on-surface">Recommended Policy to Claim</h4>
