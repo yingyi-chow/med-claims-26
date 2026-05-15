@@ -4,9 +4,10 @@ import clsx from 'clsx';
 function Sidebar() {
   const navItems = [
     { to: '/overview', icon: 'dashboard', label: 'Overview' },
-    { to: '/policies', icon: 'verified_user', label: 'My Policies' },
-    { to: '/simulator', icon: 'calculate', label: 'Claim Simulator' },
-    { to: '/documents', icon: 'description', label: 'Documents' },
+    { to: '/policies', icon: 'security', label: 'My Policies' },
+    { to: '/pricing', icon: 'payments', label: 'Pricing' },
+    { to: '/simulator', icon: 'analytics', label: 'Claim Simulator' },
+    { to: '/documents', icon: 'upload_file', label: 'Documents' },
   ];
 
   return (
@@ -20,6 +21,13 @@ function Sidebar() {
             <h1 className="text-headline-md font-headline-md font-bold text-primary">MedClaim</h1>
             <p className="text-label-sm text-on-surface-variant font-label-sm">Expertise & Clarity</p>
           </div>
+        </div>
+        <div className="mt-6 px-3 py-2 bg-surface-container rounded-lg border border-outline-variant flex items-center justify-between shadow-sm">
+          <div className="flex flex-col">
+            <span className="text-[10px] uppercase tracking-widest text-outline font-bold leading-none mb-1">Your Plan</span>
+            <span className="text-label-md font-bold text-primary">Free</span>
+          </div>
+          <div className="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_rgba(57,211,106,0.4)]"></div>
         </div>
       </div>
       
