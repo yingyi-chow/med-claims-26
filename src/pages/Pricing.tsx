@@ -114,6 +114,22 @@ function Pricing() {
         </div>
       </div>
 
+      {/* Sign Up CTA */}
+      <section className="bg-primary text-on-primary rounded-xl p-10 mb-20 text-center shadow-lg relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/4"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/3 -translate-x-1/4"></div>
+        <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+          <span className="material-symbols-outlined text-[48px] mb-4 text-tertiary-fixed-dim" aria-hidden="true">insights</span>
+          <h3 className="font-headline-lg text-headline-lg mb-4">Ready to take control of your healthcare?</h3>
+          <p className="font-body-lg text-body-lg opacity-90 mb-8 leading-relaxed">
+            Sign up today to unlock clear insights into your policies, spot hidden exclusions, and understand your claimable coverage in minutes.
+          </p>
+          <button className="bg-tertiary-fixed text-on-tertiary-fixed px-8 py-4 rounded-xl font-label-md text-label-md shadow-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-tertiary-fixed focus:ring-offset-2 focus:ring-offset-primary">
+            Create Your Free Account
+          </button>
+        </div>
+      </section>
+
       {/* Privacy & Security Section */}
       <section className="bg-surface-container-low rounded-xl p-12 border border-outline-variant relative overflow-hidden">
         <div className="flex flex-col lg:flex-row items-center gap-12 relative z-10">

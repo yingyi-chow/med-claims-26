@@ -6,7 +6,7 @@ function Overview() {
   return (
     <div className="max-w-container-max mx-auto w-full">
       {/* Top Bar / Header */}
-      <header className="flex justify-between items-end mb-12">
+      <header className="flex justify-between items-end mb-8">
         <div>
           <h2 className="font-headline-lg text-headline-lg text-primary">Dashboard</h2>
           <p className="font-body-md text-body-md text-secondary mt-1">Welcome back, Sarah. Here is your coverage overview.</p>
@@ -20,6 +20,19 @@ function Overview() {
           Start New Claim Simulation
         </button>
       </header>
+
+      {/* Promotional Banner */}
+      <div className="bg-primary-container text-on-primary-container rounded-xl p-8 mb-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+        <div className="flex-1">
+          <h3 className="font-headline-md text-headline-md mb-2">Be sure of your coverage.</h3>
+          <p className="font-body-md text-body-md opacity-90 max-w-3xl">
+            Uncover hidden disclaimers and fine print, and know exactly which parts of your policy you can claim — and how much.
+          </p>
+        </div>
+        <div className="w-16 h-16 rounded-full bg-on-primary-container/10 flex items-center justify-center shrink-0">
+          <span className="material-symbols-outlined text-[32px]" aria-hidden="true">plagiarism</span>
+        </div>
+      </div>
 
       {/* Bento Grid Section */}
       <div className="grid grid-cols-12 gap-gutter">
