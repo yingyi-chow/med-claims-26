@@ -5,9 +5,9 @@ function Sidebar() {
   const navItems = [
     { to: '/overview', icon: 'dashboard', label: 'Overview' },
     { to: '/policies', icon: 'security', label: 'My Policies' },
-    { to: '/pricing', icon: 'payments', label: 'Pricing' },
     { to: '/simulator', icon: 'analytics', label: 'Claim Simulator' },
     { to: '/documents', icon: 'upload_file', label: 'Documents' },
+    { to: '/pricing', icon: 'payments', label: 'Pricing' },
   ];
 
   return (

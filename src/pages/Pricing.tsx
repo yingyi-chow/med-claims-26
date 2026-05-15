@@ -1,6 +1,33 @@
+import { useState, useEffect } from 'react';
 
+const pricingMessages = [
+  {
+    icon: "insights",
+    title: "Ready to take control of your healthcare?",
+    content: "Sign up today to unlock clear insights into your policies, spot hidden exclusions, and understand your claimable coverage in minutes.",
+    cta: "Upgrade your plan"
+  },
+  {
+    icon: "corporate_fare",
+    title: "Enterprise Solutions",
+    content: "“Clarity for Clients. Efficiency for Companies.” Our AI‑powered platform helps users understand their policies instantly, without waiting for call centers or struggling through fine print. By clarifying coverage upfront, it reduces rejections and client unhappiness. The result is lower costs for companies, faster answers for clients, and stronger trust between insurers and their customers.",
+    cta: "Contact Sales for Enterprise"
+  }
+];
 
 function Pricing() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % pricingMessages.length);
+    }, 10000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % pricingMessages.length);
+  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + pricingMessages.length) % pricingMessages.length);
+
   return (
     <div className="max-w-container-max mx-auto w-full">
       {/* Header Section */}
@@ -12,13 +39,13 @@ function Pricing() {
       </section>
 
       {/* Pricing Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 items-end">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 items-end">
         {/* Free Plan */}
-        <div className="relative bg-surface-container-lowest border border-outline-variant rounded-xl p-8 shadow-sm flex flex-col h-full hover:shadow-lg transition-shadow">
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-surface-container-high text-on-surface-variant px-4 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-widest border border-outline-variant">
+        <div className="relative bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm flex flex-col h-full hover:shadow-lg transition-shadow">
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-surface-container-high text-on-surface-variant px-4 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-widest border border-outline-variant whitespace-nowrap">
             Current Plan
           </div>
-          <div className="mb-8">
+          <div className="mb-8 mt-2">
             <span className="font-label-sm text-label-sm text-primary uppercase tracking-wider mb-2 block">Personal</span>
             <h3 className="font-headline-md text-headline-md text-on-surface mb-2">Free</h3>
             <div className="flex items-baseline gap-x-1">
@@ -42,22 +69,22 @@ function Pricing() {
           </ul>
           <button 
             disabled 
-            className="w-full py-3 px-6 bg-surface-container-low text-on-surface-variant rounded-xl font-label-md text-label-md cursor-default border border-outline-variant"
+            className="w-full py-3 px-4 bg-surface-container-low text-on-surface-variant rounded-xl font-label-md text-label-md cursor-default border border-outline-variant"
           >
             Your Current Plan
           </button>
         </div>
 
         {/* Basic Plan (Featured) */}
-        <div className="relative bg-surface-container-lowest border-2 border-primary-container rounded-xl p-8 shadow-xl flex flex-col h-full transform scale-105 z-10">
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary px-4 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-widest">
+        <div className="relative bg-surface-container-lowest border-2 border-primary-container rounded-xl p-6 shadow-xl flex flex-col h-full transform lg:scale-105 z-10">
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-container text-on-primary px-4 py-1 rounded-full font-label-sm text-label-sm uppercase tracking-widest whitespace-nowrap">
             Most Popular
           </div>
-          <div className="mb-8">
-            <span className="font-label-sm text-label-sm text-primary uppercase tracking-wider mb-2 block">Professional</span>
+          <div className="mb-8 mt-2">
+            <span className="font-label-sm text-label-sm text-primary uppercase tracking-wider mb-2 block">Personal</span>
             <h3 className="font-headline-md text-headline-md text-on-surface mb-2">Basic</h3>
             <div className="flex items-baseline gap-x-1">
-              <span className="font-headline-lg text-headline-lg text-on-surface">$19</span>
+              <span className="font-headline-lg text-headline-lg text-on-surface">$2.99</span>
               <span className="font-body-md text-body-md text-outline">/mo</span>
             </div>
           </div>
@@ -75,18 +102,18 @@ function Pricing() {
               Priority Support
             </li>
           </ul>
-          <button className="w-full py-4 px-6 bg-primary text-on-primary rounded-xl font-label-md text-label-md hover:bg-primary-container transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+          <button className="w-full py-4 px-4 bg-primary text-on-primary rounded-xl font-label-md text-label-md hover:bg-primary-container transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
             Select Basic Plan
           </button>
         </div>
 
         {/* Premium Plan */}
-        <div className="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 shadow-sm flex flex-col h-full hover:shadow-lg transition-shadow">
-          <div className="mb-8">
-            <span className="font-label-sm text-label-sm text-primary uppercase tracking-wider mb-2 block">Enterprise</span>
+        <div className="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm flex flex-col h-full hover:shadow-lg transition-shadow">
+          <div className="mb-8 mt-2">
+            <span className="font-label-sm text-label-sm text-primary uppercase tracking-wider mb-2 block">Personal</span>
             <h3 className="font-headline-md text-headline-md text-on-surface mb-2">Premium</h3>
             <div className="flex items-baseline gap-x-1">
-              <span className="font-headline-lg text-headline-lg text-on-surface">$49</span>
+              <span className="font-headline-lg text-headline-lg text-on-surface">$3.99</span>
               <span className="font-body-md text-body-md text-outline">/mo</span>
             </div>
           </div>
@@ -108,25 +135,93 @@ function Pricing() {
               Advanced Analysis
             </li>
           </ul>
-          <button className="w-full py-3 px-6 border-2 border-primary text-primary rounded-xl font-label-md text-label-md hover:bg-surface-container-low transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+          <button className="w-full py-3 px-4 border-2 border-primary text-primary rounded-xl font-label-md text-label-md hover:bg-surface-container-low transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
             Go Premium
+          </button>
+        </div>
+
+        {/* Enterprise Plan */}
+        <div className="bg-surface-container-low border border-primary/30 rounded-xl p-6 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+          <div className="mb-8 mt-2 relative z-10">
+            <span className="font-label-sm text-label-sm text-primary uppercase tracking-wider mb-2 block">Enterprise</span>
+            <h3 className="font-headline-md text-headline-md text-on-surface mb-2">Corporate</h3>
+            <div className="flex items-baseline gap-x-1 h-[40px] items-center">
+              <span className="font-headline-md text-headline-md text-on-surface">Contact Sales</span>
+            </div>
+          </div>
+          <ul className="flex-grow space-y-4 mb-10 relative z-10">
+            <li className="flex items-center gap-x-3 text-body-md font-body-md">
+              <span className="material-symbols-outlined text-tertiary-container text-sm" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">check_circle</span>
+              Volume Licensing
+            </li>
+            <li className="flex items-center gap-x-3 text-body-md font-body-md">
+              <span className="material-symbols-outlined text-tertiary-container text-sm" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">check_circle</span>
+              Custom Integrations (API)
+            </li>
+            <li className="flex items-center gap-x-3 text-body-md font-body-md">
+              <span className="material-symbols-outlined text-tertiary-container text-sm" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">check_circle</span>
+              Dedicated Account Manager
+            </li>
+            <li className="flex items-center gap-x-3 text-body-md font-body-md">
+              <span className="material-symbols-outlined text-tertiary-container text-sm" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">check_circle</span>
+              White-labeling Options
+            </li>
+          </ul>
+          <button className="relative z-10 w-full py-3 px-4 bg-primary text-on-primary rounded-xl font-label-md text-label-md hover:bg-primary-container transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+            Contact Sales
           </button>
         </div>
       </div>
 
-      {/* Sign Up CTA */}
-      <section className="bg-primary text-on-primary rounded-xl p-10 mb-20 text-center shadow-lg relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/4"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/3 -translate-x-1/4"></div>
-        <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
-          <span className="material-symbols-outlined text-[48px] mb-4 text-tertiary-fixed-dim" aria-hidden="true">insights</span>
-          <h3 className="font-headline-lg text-headline-lg mb-4">Ready to take control of your healthcare?</h3>
-          <p className="font-body-lg text-body-lg opacity-90 mb-8 leading-relaxed">
-            Sign up today to unlock clear insights into your policies, spot hidden exclusions, and understand your claimable coverage in minutes.
-          </p>
-          <button className="bg-tertiary-fixed text-on-tertiary-fixed px-8 py-4 rounded-xl font-label-md text-label-md shadow-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-tertiary-fixed focus:ring-offset-2 focus:ring-offset-primary">
-            Upgrade your plan
-          </button>
+      {/* Sign Up CTA Carousel */}
+      <section className="bg-primary text-on-primary rounded-xl mb-20 text-center shadow-lg relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/4 z-0 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/3 -translate-x-1/4 z-0 pointer-events-none"></div>
+        
+        <div className="relative z-10 flex flex-col items-center">
+          <div 
+            key={currentIndex} 
+            className="p-10 pb-6 w-full animate-[fadeIn_0.5s_ease-in-out] min-h-[300px] flex flex-col justify-center items-center"
+          >
+            <span className="material-symbols-outlined text-[48px] mb-4 text-tertiary-fixed-dim" aria-hidden="true">{pricingMessages[currentIndex].icon}</span>
+            <h3 className="font-headline-lg text-headline-lg mb-4 max-w-3xl mx-auto">{pricingMessages[currentIndex].title}</h3>
+            <p className="font-body-lg text-body-lg opacity-90 mb-8 leading-relaxed max-w-4xl mx-auto">
+              {pricingMessages[currentIndex].content}
+            </p>
+            <button className="bg-tertiary-fixed text-on-tertiary-fixed px-8 py-4 rounded-xl font-label-md text-label-md shadow-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-tertiary-fixed focus:ring-offset-2 focus:ring-offset-primary">
+              {pricingMessages[currentIndex].cta}
+            </button>
+          </div>
+
+          <div className="flex items-center justify-between w-full px-10 pb-6 border-t border-white/10 pt-4">
+             <div className="flex gap-3 items-center">
+                {pricingMessages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentIndex(idx)}
+                    className={`h-2.5 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-white ${idx === currentIndex ? 'w-8 bg-white' : 'w-2.5 bg-white/30 hover:bg-white/50'}`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+              <div className="flex gap-3">
+                <button 
+                  onClick={prevSlide}
+                  className="w-10 h-10 rounded-full border border-white/30 text-white hover:bg-white/10 transition-colors flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white"
+                  aria-label="Previous message"
+                >
+                  <span className="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_back</span>
+                </button>
+                <button 
+                  onClick={nextSlide}
+                  className="w-10 h-10 rounded-full border border-white/30 text-white hover:bg-white/10 transition-colors flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white"
+                  aria-label="Next message"
+                >
+                  <span className="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_forward</span>
+                </button>
+              </div>
+          </div>
         </div>
       </section>
 
