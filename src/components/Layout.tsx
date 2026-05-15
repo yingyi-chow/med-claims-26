@@ -21,7 +21,7 @@ function Layout() {
                     url: `https://medclaim.com${currentPath}`,
                     identifier: currentPath,
                     title: `MedClaim - ${currentPath.replace('/', '')}`,
-                    language: 'zh_TW' //e.g. for Traditional Chinese (Taiwan)
+                    language: 'en'
                 }
             }
           />
