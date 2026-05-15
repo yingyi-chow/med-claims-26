@@ -22,6 +22,53 @@ function MyPolicies() {
         </button>
       </header>
 
+      {/* Coverage Overview */}
+      <div className="mb-10">
+        <h3 className="font-headline-md text-headline-md text-on-surface mb-4">Coverage at a Glance</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-surface p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col gap-2">
+            <div className="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-primary">
+              <span className="material-symbols-outlined text-[20px]" aria-hidden="true">healing</span>
+            </div>
+            <p className="font-label-md text-on-surface">Surgery & Hospitalization</p>
+            <div className="mt-auto pt-2">
+              <p className="text-[10px] uppercase tracking-wider text-outline font-bold mb-1">Supported By</p>
+              <p className="text-label-sm text-primary">Health Elite Plus</p>
+            </div>
+          </div>
+          <div className="bg-surface p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col gap-2">
+            <div className="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-primary">
+              <span className="material-symbols-outlined text-[20px]" aria-hidden="true">medication</span>
+            </div>
+            <p className="font-label-md text-on-surface">Outpatient & Pharmacy</p>
+            <div className="mt-auto pt-2">
+              <p className="text-[10px] uppercase tracking-wider text-outline font-bold mb-1">Supported By</p>
+              <p className="text-label-sm text-primary">Health Elite Plus</p>
+            </div>
+          </div>
+          <div className="bg-surface p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col gap-2">
+            <div className="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-primary">
+              <span className="material-symbols-outlined text-[20px]" aria-hidden="true">dentistry</span>
+            </div>
+            <p className="font-label-md text-on-surface">Dental Care</p>
+            <div className="mt-auto pt-2">
+              <p className="text-[10px] uppercase tracking-wider text-outline font-bold mb-1">Supported By</p>
+              <p className="text-label-sm text-primary">Dental Care Pro</p>
+            </div>
+          </div>
+          <div className="bg-surface p-4 rounded-xl border border-outline-variant shadow-sm flex flex-col gap-2">
+            <div className="w-8 h-8 rounded bg-primary-container flex items-center justify-center text-primary">
+              <span className="material-symbols-outlined text-[20px]" aria-hidden="true">family_history</span>
+            </div>
+            <p className="font-label-md text-on-surface">Life & Critical Illness</p>
+            <div className="mt-auto pt-2">
+              <p className="text-[10px] uppercase tracking-wider text-outline font-bold mb-1">Supported By</p>
+              <p className="text-label-sm text-primary">Term Life Guard</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
         {/* Card 1: Health Elite Plus */}
         <div className="bg-surface-container-lowest rounded-xl border border-outline-variant p-6 shadow-sm flex flex-col gap-6">
