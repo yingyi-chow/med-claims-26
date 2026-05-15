@@ -86,13 +86,6 @@ function Sidebar() {
       </nav>
 
       <div className="mt-auto px-4 py-4 space-y-1 border-t border-outline-variant">
-        <button 
-          className="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg mb-4 hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
-          aria-label="Create New Claim"
-        >
-          <span className="material-symbols-outlined text-[18px]" aria-hidden="true">add</span>
-          New Claim
-        </button>
         <a href="#settings" className="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:bg-surface-container rounded-lg font-label-md text-label-md">
           <span className="material-symbols-outlined" aria-hidden="true">settings</span>
           <span>Settings</span>
