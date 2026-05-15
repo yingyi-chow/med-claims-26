@@ -101,7 +101,7 @@ function Pricing() {
             </li>
             <li className="flex items-center gap-x-3 text-body-md font-body-md">
               <span className="material-symbols-outlined text-tertiary-container text-sm" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">check_circle</span>
-              Dedicated Advisor
+              Dedicated Health Consultant
             </li>
             <li className="flex items-center gap-x-3 text-body-md font-body-md">
               <span className="material-symbols-outlined text-tertiary-container text-sm" style={{ fontVariationSettings: "'FILL' 1" }} aria-hidden="true">check_circle</span>

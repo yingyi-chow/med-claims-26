@@ -243,20 +243,31 @@ function ClaimSimulator() {
               </div>
             </div>
             
-            <div className="bg-primary-container text-on-primary-container border border-primary rounded-xl p-6 card-shadow">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="bg-primary w-12 h-12 rounded-full flex items-center justify-center">
-                  <span className="material-symbols-outlined text-white" aria-hidden="true">support_agent</span>
-                </div>
-                <div>
-                  <h4 className="font-label-md text-label-md font-bold">Expert Concierge</h4>
-                  <p className="font-label-sm text-label-sm opacity-80">Available 24/7</p>
-                </div>
+            <div className="bg-primary-container text-on-primary-container border border-primary rounded-xl overflow-hidden card-shadow flex flex-col">
+              <div className="h-32 w-full relative">
+                <img 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJdLbcFU1lzN7OvIYLR3f9qQjG_tCT5hnhPruHxaYL7kFdAeCE_0ZlVtISCytjo39OqCXb1SfIHBQjBHvgqGmJQum1Riy6opRmla37gAqV6HKZmO7tg9cBX2dlZBlD84Z8sB1Er38_Lx8YnHFKTTVS-F2IYu8eG_n_Gwm0dKYaZptNpRlg2zl9Gg3BtnSeCpsX28387EXE2g5ZUk2YI2rCbCv7Fj7lPn4k9MI-2qjlh9u6uefE2iRSKSmFIn_Z0XDcGLfmEWsFtFQ" 
+                  alt="Health Consultant" 
+                  className="w-full h-full object-cover object-top opacity-80 mix-blend-luminosity" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-container to-transparent"></div>
               </div>
-              <p className="font-body-md text-body-md mb-6">Need help interpreting these costs? Speak with a medical advisor to understand your policy better.</p>
-              <button className="w-full bg-surface-container-lowest text-primary font-label-md text-label-md py-3 rounded-lg hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
-                Request Callback
-              </button>
+              <div className="p-6 pt-0 relative z-10">
+                <div className="flex items-center gap-4 mb-4 -mt-8">
+                  <div className="bg-surface-container-lowest w-14 h-14 rounded-full flex items-center justify-center shadow-md border border-outline-variant shrink-0">
+                    <span className="material-symbols-outlined text-primary text-[28px]" aria-hidden="true" style={{ fontVariationSettings: "'FILL' 1" }}>support_agent</span>
+                  </div>
+                  <div className="pt-8">
+                    <h4 className="font-label-md text-label-md font-bold">Health Consultant</h4>
+                    <p className="font-label-sm text-label-sm opacity-80">Available 24/7</p>
+                  </div>
+                </div>
+                <p className="font-body-md text-body-md mb-6">Need help interpreting these costs? Speak with a health consultant to understand your policy better.</p>
+                <button className="w-full bg-surface-container-lowest text-primary font-label-md text-label-md py-3 rounded-lg hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary shadow-sm flex justify-center items-center gap-2">
+                  <span className="material-symbols-outlined text-[18px]">forum</span>
+                  Contact Health Consultant
+                </button>
+              </div>
             </div>
           </aside>
         </div>
